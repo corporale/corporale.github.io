@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-07-01T08:36:25.800Z</updated>
+    <updated>2019-07-01T08:39:30.906Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -10,6 +10,104 @@
     <logo>https://corporale.github.io//images/avatar.png</logo>
     <icon>https://corporale.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[运行iSimulator工程]]></title>
+        <id>https://corporale.github.io//post/yun-xing-isimulator-gong-cheng</id>
+        <link href="https://corporale.github.io//post/yun-xing-isimulator-gong-cheng">
+        </link>
+        <updated>2019-07-01T08:38:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>上一篇文章说到安装homebrew，这篇文章就说用homebrew安装Carthage遇到的坑。注意：这篇文章以工程<a href="https://github.com/wigl/iSimulator">iSimulator</a>为例子</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>上一篇文章说到安装homebrew，这篇文章就说用homebrew安装Carthage遇到的坑。注意：这篇文章以工程<a href="https://github.com/wigl/iSimulator">iSimulator</a>为例子</p>
+<!-- more -->
+<h1 id="1介绍">1.介绍</h1>
+<p>Carthage与CocoaPods类似，都是用于在iOS/OS X环境下管理第三方的工具。</p>
+<h1 id="2安装carthage">2.安装Carthage</h1>
+<pre><code>brew install carthage
+</code></pre>
+<p>安装Carthage之后, 可以通过下面命令查看版本</p>
+<pre><code>carthage version  // 目前的版本号为0.32.0
+</code></pre>
+<h1 id="3-使用carthage">3. 使用Carthage</h1>
+<p>进入项目所在的文件夹</p>
+<pre><code>cd ~/路径/项目文件夹
+</code></pre>
+<p>因为本身我的工程里就有个Cartfile文件，别人已经创建好</p>
+<pre><code>./carthageBootstrap.sh
+</code></pre>
+<p>运行之后提示这个错误</p>
+<pre><code>A shell task (/usr/bin/xcrun xcodebuild -project /Users/Corporal/Desktop/iSimulator-develop/Carthage/Checkouts/FBSimulatorControl/FBSimulatorControl.xcodeproj CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES -list) failed with exit code 72:
+xcrun: error: unable to find utility &quot;xcodebuild&quot;, not a developer tool or in PATH
+</code></pre>
+<p>想到我的电脑有两个Xcode, Xcode重命名后，xcodebuild找不到原来的Xcode了所致。</p>
+<p>解决方法：在 终端执行如下命令</p>
+<pre><code>sudo xcode-select -s /Applications/Xcode.app/Contents/Developer/
+</code></pre>
+<p>再次执行./carthageBootstrap.sh， 成功
+<img src="https://upload-images.jianshu.io/upload_images/817824-89c6e3c98ecaa3d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="4运行isimulator">4.运行iSimulator</h1>
+<p>折腾半天终于将工程跑成功，但运行完之后控制台提示这个错误, 然后模拟器没有显示出来
+Unable to load Info.plist exceptions (eGPUOverrides)</p>
+<pre><code>iSimulator[12766:646940] [default] Unable to load Info.plist exceptions (eGPUOverrides)
+</code></pre>
+<p>环境：Mac系统是mojave10.14, Xcode10
+更新到最新的Xcode10.1还是报同样的错，更新到10.14.3中，希望是系统的问题了</p>
+<p>18/3/2 18:47编辑
+将Mac的系统升到10.14.3运行工程就没有问题了, 虽然也是提示上面这段话, 但模拟器可以跑起来</p>
+<h1 id="附">附</h1>
+<p>下面贴几个Carthage的使用方法
+<a href="https://www.jianshu.com/p/7a0634e14332">Carthage的用法及注意事项</a>
+<a href="https://www.jianshu.com/p/1fcee472184c">Carthage使用教程总结 - iOS</a>
+<a href="https://www.jianshu.com/p/a734be794019">Carthage的安装和使用</a></p>
+<p>参考链接
+1.<a href="https://blog.csdn.net/u010411264/article/details/62888873">xcrun: error: unable to find utility &quot;instruments&quot;, not a developer tool or in PATH</a>
+2.<a href="https://blog.csdn.net/joeblackzqq/article/details/38908317">xcode-select: error: tool 'xcodebuild' requires Xcode错误解决方法</a>
+3.<a href="https://stackoverflow.com/questions/52507950/unable-to-load-info-plist-error-xcode-10-under-macos-10-14-mojave">无法在macOS 10.14 Mojave下加载Info.plist错误Xcode 10</a>
+4.<a href="https://forum.openframeworks.cc/t/window-not-drawn-on-startup-using-xcode10/30819">Window not drawn on startup using Xcode10</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Homebrew 安装历程分享]]></title>
+        <id>https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang</id>
+        <link href="https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang">
+        </link>
+        <updated>2019-07-01T08:38:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>今天为了跑个从github下载下来的工程, 花了半天时间终于将homebrew和Carthage安装好, 为了后面的人安装可以顺利点,现在将过程中遇到的坑整理下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>今天为了跑个从github下载下来的工程, 花了半天时间终于将homebrew和Carthage安装好, 为了后面的人安装可以顺利点,现在将过程中遇到的坑整理下。</p>
+<!-- more -->
+<h1 id="1homebrew介绍">1.Homebrew介绍</h1>
+<p>Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
+<h1 id="2安装">2.安装</h1>
+<p><a href="https://brew.sh/index_zh-cn.html">官网介绍链接</a>
+其实就一句命令行，将下面的命令行复制到终端运行就可以</p>
+<pre><code>安装命令
+/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<p>心想安装个东西应该没什么问题，结果一开始就报错了</p>
+<pre><code>error: RPC failed; curl 18 transfer closed with outstanding read data remaining
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+Failed during: git fetch origin master:refs/remotes/origin/master --tags --force
+</code></pre>
+<p>百度，翻墙搜索各种方法都试一遍，发现执行安装命令后还是报这个错</p>
+<p>后面想到有可能是国内网络问题，ping下github.com, 发现超时，于是去<a href="http://github.global.ssl.fastly.net.ipaddress.com/">这里</a>查询到ip是xxx.xxx.xxx.xxx，之后修改本地的host配置，配置的步骤如下</p>
+<ul>
+<li>1.在终端中 sudo vi /etc/hosts 打开编辑文件</li>
+<li>2.按 s 进入编辑模式</li>
+<li>3.接着在最下面添加 xxx.xxx.xxx.xxx github.com</li>
+<li>4.按 control + c 保存</li>
+<li>5.输入 :wq 退出</li>
+</ul>
+<p>再次执行安装命令，终端提示 no alternative certificate subject name matches target host name 'github.com', 好吧，应该是host配置不对，后面按照网上大神的<a href="https://www.jianshu.com/p/c8d998903a6a">教程</a>那个xx替换成<strong>192.30.253.113</strong>就没问题</p>
+<p>一开始还担心这个ip地址指向的地方是不安全，用<a href="https://www.ip.cn/index.php?ip">ip域名查询</a>下发现指向github,再次执行安装命令，终于成功了
+<img src="https://upload-images.jianshu.io/upload_images/817824-a9cc0ab525948c76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>下篇文章会说怎么用homebrew安装Carthage</p>
+<p>参考链接
+<a href="https://www.jianshu.com/p/c8d998903a6a">Mac Homebrew 安装遇到的坑</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[iOS开发-蓝牙4.0-BLE开发(代码篇）]]></title>
         <id>https://corporale.github.io//post/ios-kai-fa-lan-ya-40-ble-kai-fa-dai-ma-pian</id>

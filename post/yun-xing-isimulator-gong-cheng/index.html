@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>运行iSimulator工程 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://corporale.github.io//favicon.ico?v=1561970368410">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://corporale.github.io//styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://corporale.github.io/">
+        <img src="https://corporale.github.io//images/avatar.png?v=1561970368410" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://corporale.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">运行iSimulator工程</h2>
+            <div class="post-date">2019-07-01</div>
+            
+            <div class="post-content">
+              <p>上一篇文章说到安装homebrew，这篇文章就说用homebrew安装Carthage遇到的坑。注意：这篇文章以工程<a href="https://github.com/wigl/iSimulator">iSimulator</a>为例子</p>
+<!-- more -->
+<h1 id="1介绍">1.介绍</h1>
+<p>Carthage与CocoaPods类似，都是用于在iOS/OS X环境下管理第三方的工具。</p>
+<h1 id="2安装carthage">2.安装Carthage</h1>
+<pre><code>brew install carthage
+</code></pre>
+<p>安装Carthage之后, 可以通过下面命令查看版本</p>
+<pre><code>carthage version  // 目前的版本号为0.32.0
+</code></pre>
+<h1 id="3-使用carthage">3. 使用Carthage</h1>
+<p>进入项目所在的文件夹</p>
+<pre><code>cd ~/路径/项目文件夹
+</code></pre>
+<p>因为本身我的工程里就有个Cartfile文件，别人已经创建好</p>
+<pre><code>./carthageBootstrap.sh
+</code></pre>
+<p>运行之后提示这个错误</p>
+<pre><code>A shell task (/usr/bin/xcrun xcodebuild -project /Users/Corporal/Desktop/iSimulator-develop/Carthage/Checkouts/FBSimulatorControl/FBSimulatorControl.xcodeproj CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= CARTHAGE=YES -list) failed with exit code 72:
+xcrun: error: unable to find utility &quot;xcodebuild&quot;, not a developer tool or in PATH
+</code></pre>
+<p>想到我的电脑有两个Xcode, Xcode重命名后，xcodebuild找不到原来的Xcode了所致。</p>
+<p>解决方法：在 终端执行如下命令</p>
+<pre><code>sudo xcode-select -s /Applications/Xcode.app/Contents/Developer/
+</code></pre>
+<p>再次执行./carthageBootstrap.sh， 成功
+<img src="https://upload-images.jianshu.io/upload_images/817824-89c6e3c98ecaa3d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="4运行isimulator">4.运行iSimulator</h1>
+<p>折腾半天终于将工程跑成功，但运行完之后控制台提示这个错误, 然后模拟器没有显示出来
+Unable to load Info.plist exceptions (eGPUOverrides)</p>
+<pre><code>iSimulator[12766:646940] [default] Unable to load Info.plist exceptions (eGPUOverrides)
+</code></pre>
+<p>环境：Mac系统是mojave10.14, Xcode10
+更新到最新的Xcode10.1还是报同样的错，更新到10.14.3中，希望是系统的问题了</p>
+<p>18/3/2 18:47编辑
+将Mac的系统升到10.14.3运行工程就没有问题了, 虽然也是提示上面这段话, 但模拟器可以跑起来</p>
+<h1 id="附">附</h1>
+<p>下面贴几个Carthage的使用方法
+<a href="https://www.jianshu.com/p/7a0634e14332">Carthage的用法及注意事项</a>
+<a href="https://www.jianshu.com/p/1fcee472184c">Carthage使用教程总结 - iOS</a>
+<a href="https://www.jianshu.com/p/a734be794019">Carthage的安装和使用</a></p>
+<p>参考链接
+1.<a href="https://blog.csdn.net/u010411264/article/details/62888873">xcrun: error: unable to find utility &quot;instruments&quot;, not a developer tool or in PATH</a>
+2.<a href="https://blog.csdn.net/joeblackzqq/article/details/38908317">xcode-select: error: tool 'xcodebuild' requires Xcode错误解决方法</a>
+3.<a href="https://stackoverflow.com/questions/52507950/unable-to-load-info-plist-error-xcode-10-under-macos-10-14-mojave">无法在macOS 10.14 Mojave下加载Info.plist错误Xcode 10</a>
+4.<a href="https://forum.openframeworks.cc/t/window-not-drawn-on-startup-using-xcode10/30819">Window not drawn on startup using Xcode10</a></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang">
+                  <h3 class="post-title">
+                    Homebrew 安装历程分享
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
