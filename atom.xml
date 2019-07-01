@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-07-01T09:14:26.221Z</updated>
+    <updated>2019-07-01T09:19:03.430Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -19,15 +19,13 @@
         <summary type="html"><![CDATA[<p>继续集成Firebase</p>
 <p>按照教程文档来<a href="https://firebase.google.com/docs/cloud-messaging/ios/client?authuser=0#upload_your_apns_authentication_key">云消息传递文档</a></p>
 <p>讲下比较重要的几个步骤</p>
-<h1 id="上传您的-apns-身份验证密钥">上传您的 APNs 身份验证密钥</h1>
-<p>将您的 APNs 身份验证密钥上传到 Firebase。如果您还没有 APNs 身份验证密钥，请参阅<a href="https://firebase.google.com/docs/cloud-messaging/ios/certs?authuser=0">配置 FCM APNs</a>。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>继续集成Firebase</p>
 <p>按照教程文档来<a href="https://firebase.google.com/docs/cloud-messaging/ios/client?authuser=0#upload_your_apns_authentication_key">云消息传递文档</a></p>
 <p>讲下比较重要的几个步骤</p>
+<!-- more -->
 <h1 id="上传您的-apns-身份验证密钥">上传您的 APNs 身份验证密钥</h1>
 <p>将您的 APNs 身份验证密钥上传到 Firebase。如果您还没有 APNs 身份验证密钥，请参阅<a href="https://firebase.google.com/docs/cloud-messaging/ios/certs?authuser=0">配置 FCM APNs</a>。</p>
-<!-- more -->
 <ol>
 <li>
 <p>在 Firebase 控制台中，在您的项目内依次选择齿轮图标、<strong>项目设置</strong>以及<strong>云消息传递</strong>标签。
@@ -80,20 +78,60 @@
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Homebrew 安装历程分享]]></title>
+        <id>https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang</id>
+        <link href="https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang">
+        </link>
+        <updated>2019-07-01T08:38:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>今天为了跑个从github下载下来的工程, 花了半天时间终于将homebrew和Carthage安装好, 为了后面的人安装可以顺利点,现在将过程中遇到的坑整理下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>今天为了跑个从github下载下来的工程, 花了半天时间终于将homebrew和Carthage安装好, 为了后面的人安装可以顺利点,现在将过程中遇到的坑整理下。</p>
+<!-- more -->
+<h1 id="1homebrew介绍">1.Homebrew介绍</h1>
+<p>Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
+<h1 id="2安装">2.安装</h1>
+<p><a href="https://brew.sh/index_zh-cn.html">官网介绍链接</a>
+其实就一句命令行，将下面的命令行复制到终端运行就可以</p>
+<pre><code>安装命令
+/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<p>心想安装个东西应该没什么问题，结果一开始就报错了</p>
+<pre><code>error: RPC failed; curl 18 transfer closed with outstanding read data remaining
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+Failed during: git fetch origin master:refs/remotes/origin/master --tags --force
+</code></pre>
+<p>百度，翻墙搜索各种方法都试一遍，发现执行安装命令后还是报这个错</p>
+<p>后面想到有可能是国内网络问题，ping下github.com, 发现超时，于是去<a href="http://github.global.ssl.fastly.net.ipaddress.com/">这里</a>查询到ip是xxx.xxx.xxx.xxx，之后修改本地的host配置，配置的步骤如下</p>
+<ul>
+<li>1.在终端中 sudo vi /etc/hosts 打开编辑文件</li>
+<li>2.按 s 进入编辑模式</li>
+<li>3.接着在最下面添加 xxx.xxx.xxx.xxx github.com</li>
+<li>4.按 control + c 保存</li>
+<li>5.输入 :wq 退出</li>
+</ul>
+<p>再次执行安装命令，终端提示 no alternative certificate subject name matches target host name 'github.com', 好吧，应该是host配置不对，后面按照网上大神的<a href="https://www.jianshu.com/p/c8d998903a6a">教程</a>那个xx替换成<strong>192.30.253.113</strong>就没问题</p>
+<p>一开始还担心这个ip地址指向的地方是不安全，用<a href="https://www.ip.cn/index.php?ip">ip域名查询</a>下发现指向github,再次执行安装命令，终于成功了
+<img src="https://corporale.github.io//post-images/1561971977512.png" alt=""></p>
+<p>下篇文章会说怎么用homebrew安装Carthage</p>
+<p>参考链接
+<a href="https://www.jianshu.com/p/c8d998903a6a">Mac Homebrew 安装遇到的坑</a></p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[iOS-使用Firebase收集应用崩溃日志]]></title>
         <id>https://corporale.github.io//post/ios-shi-yong-firebase-shou-ji-ying-yong-beng-kui-ri-zhi</id>
         <link href="https://corporale.github.io//post/ios-shi-yong-firebase-shou-ji-ying-yong-beng-kui-ri-zhi">
         </link>
-        <updated>2019-07-01T08:40:58.000Z</updated>
+        <updated>2019-06-03T11:24:58.000Z</updated>
         <summary type="html"><![CDATA[<p>公司做的项目主要市场是海外， 所以同事提到集成Firebase，可以进行收集日志和分析用户情况。毕竟2014年10月就被Google收购了，结合Google的云服务可以很方便管理自己的项目。</p>
-<h1 id="firebase-crashlytics-使用入门">Firebase Crashlytics 使用入门</h1>
-<p>按照官网这个<a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0">Firebase Crashlytics 使用入门</a></p>
 ]]></summary>
         <content type="html"><![CDATA[<p>公司做的项目主要市场是海外， 所以同事提到集成Firebase，可以进行收集日志和分析用户情况。毕竟2014年10月就被Google收购了，结合Google的云服务可以很方便管理自己的项目。</p>
-<h1 id="firebase-crashlytics-使用入门">Firebase Crashlytics 使用入门</h1>
-<p>按照官网这个<a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0">Firebase Crashlytics 使用入门</a></p>
 <!-- more -->
-<p>大概就是
+<h1 id="firebase-crashlytics-使用入门">Firebase Crashlytics 使用入门</h1>
+<p>按照官网这个<a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0">Firebase Crashlytics 使用入门</a>
+大概就是
 1.首先去<a href="%5Bhttps://console.firebase.google.com/%5D(https://console.firebase.google.com/)">Firebase 控制台</a>创建应用
 2.然后进去对应项目后点击左边栏的Crashlytics
 <img src="https://corporale.github.io//post-images/1561972134187.png" alt="">
@@ -112,7 +150,7 @@
         <id>https://corporale.github.io//post/yun-xing-isimulator-gong-cheng</id>
         <link href="https://corporale.github.io//post/yun-xing-isimulator-gong-cheng">
         </link>
-        <updated>2019-07-01T08:38:54.000Z</updated>
+        <updated>2019-03-02T08:54:00.000Z</updated>
         <summary type="html"><![CDATA[<p>上一篇文章说到安装homebrew，这篇文章就说用homebrew安装Carthage遇到的坑。注意：这篇文章以工程<a href="https://github.com/wigl/iSimulator">iSimulator</a>为例子</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>上一篇文章说到安装homebrew，这篇文章就说用homebrew安装Carthage遇到的坑。注意：这篇文章以工程<a href="https://github.com/wigl/iSimulator">iSimulator</a>为例子</p>
@@ -161,48 +199,6 @@ Unable to load Info.plist exceptions (eGPUOverrides)</p>
 2.<a href="https://blog.csdn.net/joeblackzqq/article/details/38908317">xcode-select: error: tool 'xcodebuild' requires Xcode错误解决方法</a>
 3.<a href="https://stackoverflow.com/questions/52507950/unable-to-load-info-plist-error-xcode-10-under-macos-10-14-mojave">无法在macOS 10.14 Mojave下加载Info.plist错误Xcode 10</a>
 4.<a href="https://forum.openframeworks.cc/t/window-not-drawn-on-startup-using-xcode10/30819">Window not drawn on startup using Xcode10</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Homebrew 安装历程分享]]></title>
-        <id>https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang</id>
-        <link href="https://corporale.github.io//post/homebrew-an-zhuang-li-cheng-fen-xiang">
-        </link>
-        <updated>2019-07-01T08:38:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>今天为了跑个从github下载下来的工程, 花了半天时间终于将homebrew和Carthage安装好, 为了后面的人安装可以顺利点,现在将过程中遇到的坑整理下。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>今天为了跑个从github下载下来的工程, 花了半天时间终于将homebrew和Carthage安装好, 为了后面的人安装可以顺利点,现在将过程中遇到的坑整理下。</p>
-<!-- more -->
-<h1 id="1homebrew介绍">1.Homebrew介绍</h1>
-<p>Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
-<h1 id="2安装">2.安装</h1>
-<p><a href="https://brew.sh/index_zh-cn.html">官网介绍链接</a>
-其实就一句命令行，将下面的命令行复制到终端运行就可以</p>
-<pre><code>安装命令
-/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre>
-<p>心想安装个东西应该没什么问题，结果一开始就报错了</p>
-<pre><code>error: RPC failed; curl 18 transfer closed with outstanding read data remaining
-fatal: The remote end hung up unexpectedly
-fatal: early EOF
-fatal: index-pack failed
-Failed during: git fetch origin master:refs/remotes/origin/master --tags --force
-</code></pre>
-<p>百度，翻墙搜索各种方法都试一遍，发现执行安装命令后还是报这个错</p>
-<p>后面想到有可能是国内网络问题，ping下github.com, 发现超时，于是去<a href="http://github.global.ssl.fastly.net.ipaddress.com/">这里</a>查询到ip是xxx.xxx.xxx.xxx，之后修改本地的host配置，配置的步骤如下</p>
-<ul>
-<li>1.在终端中 sudo vi /etc/hosts 打开编辑文件</li>
-<li>2.按 s 进入编辑模式</li>
-<li>3.接着在最下面添加 xxx.xxx.xxx.xxx github.com</li>
-<li>4.按 control + c 保存</li>
-<li>5.输入 :wq 退出</li>
-</ul>
-<p>再次执行安装命令，终端提示 no alternative certificate subject name matches target host name 'github.com', 好吧，应该是host配置不对，后面按照网上大神的<a href="https://www.jianshu.com/p/c8d998903a6a">教程</a>那个xx替换成<strong>192.30.253.113</strong>就没问题</p>
-<p>一开始还担心这个ip地址指向的地方是不安全，用<a href="https://www.ip.cn/index.php?ip">ip域名查询</a>下发现指向github,再次执行安装命令，终于成功了
-<img src="https://corporale.github.io//post-images/1561971977512.png" alt=""></p>
-<p>下篇文章会说怎么用homebrew安装Carthage</p>
-<p>参考链接
-<a href="https://www.jianshu.com/p/c8d998903a6a">Mac Homebrew 安装遇到的坑</a></p>
 ]]></content>
     </entry>
     <entry>
