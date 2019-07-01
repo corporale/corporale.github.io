@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://corporale.github.io//favicon.ico?v=1561970510020">
+<link rel="shortcut icon" href="https://corporale.github.io//favicon.ico?v=1561970970698">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://corporale.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://corporale.github.io/">
-        <img src="https://corporale.github.io//images/avatar.png?v=1561970510020" class="site-logo">
+        <img src="https://corporale.github.io//images/avatar.png?v=1561970970698" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -101,7 +101,24 @@
                   2019-07-01
                 </div>
                 <div class="post-abstract">
-                  
+                  <p>继续集成Firebase</p>
+<p>按照教程文档来<a href="https://firebase.google.com/docs/cloud-messaging/ios/client?authuser=0#upload_your_apns_authentication_key">云消息传递文档</a></p>
+<p>讲下比较重要的几个步骤</p>
+<h1 id="上传您的-apns-身份验证密钥">上传您的 APNs 身份验证密钥</h1>
+<p>将您的 APNs 身份验证密钥上传到 Firebase。如果您还没有 APNs 身份验证密钥，请参阅<a href="https://firebase.google.com/docs/cloud-messaging/ios/certs?authuser=0">配置 FCM APNs</a>。</p>
+<ol>
+<li>
+<p>在 Firebase 控制台中，在您的项目内依次选择齿轮图标、<strong>项目设置</strong>以及<strong>云消息传递</strong>标签。
+<img src="https://upload-images.jianshu.io/upload_images/817824-318a297d2843ce34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li>
+<p>在 <strong>iOS 应用配置</strong>下的 <strong>APNs 身份验证密钥</strong>中，点击<strong>上传</strong>按钮。</p>
+</li>
+<li>
+<p>转到您保存密钥的位置，选择该密钥，然后点击<strong>打开</strong>。添加该密钥的密钥 ID（可在 <a href="https://developer.apple.com/membercenter/index.action">Apple Developer Member Center</a> 的 <strong>Certificates, Identifiers &amp; Profiles</strong> 中找到），然后点击<strong>上传</strong>。</p>
+</li>
+</ol>
+
                 </div>
               </div>
               
@@ -116,7 +133,16 @@
                   2019-07-01
                 </div>
                 <div class="post-abstract">
-                  
+                  <p>公司做的项目主要市场是海外， 所以同事提到集成Firebase，可以进行收集日志和分析用户情况。毕竟2014年10月就被Google收购了，结合Google的云服务可以很方便管理自己的项目。</p>
+<h1 id="firebase-crashlytics-使用入门">Firebase Crashlytics 使用入门</h1>
+<p>按照官网这个<a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0">Firebase Crashlytics 使用入门</a>
+大概就是
+1.首先去<a href="%5Bhttps://console.firebase.google.com/%5D(https://console.firebase.google.com/)">Firebase 控制台</a>创建应用
+2.然后进去对应项目后点击左边栏的Crashlytics
+<img src="https://upload-images.jianshu.io/upload_images/817824-a9cc83cdabd0d429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">
+3.按照上面官网提供的链接在CocoaPods添加对应的库，这里就不多说了，教程说得很详细了。之后还有个视频教程，看下来说得挺详细得。
+<img src="https://upload-images.jianshu.io/upload_images/817824-2aac7b8963158077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
                 </div>
               </div>
               
@@ -189,28 +215,6 @@
 
                 </div>
               </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://corporale.github.io//post/hello-gridea">
-                  <h2 class="post-title">Hello Gridea</h2>
-                </a>
-                <div class="post-date">
-                  2018-12-12
-                </div>
-                <div class="post-abstract">
-                  <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-                </div>
-              </div>
-              
-                <a class="right" href="https://corporale.github.io//post/hello-gridea">
-                  <div class="feature-container" style="background-image: url('https://corporale.github.io//post-images/hello-gridea.png')">
-                  </div>
-                </a>
               
             </article>
           
