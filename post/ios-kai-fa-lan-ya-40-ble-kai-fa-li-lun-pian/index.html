@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | Gridea</title>
+<title>iOS开发-蓝牙4.0-BLE开发(理论篇） | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -92,14 +92,32 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">iOS开发-蓝牙4.0-BLE开发(理论篇）</h2>
+            <div class="post-date">2019-07-01</div>
             
             <div class="post-content">
-              <p>这是关于的页面，可以在这里向世界介绍你！</p>
+              <p>之前公司的项目有用到蓝牙4.0, 趁周末有时间总结下其中的知识点。蓝牙低功耗技术（BLE，Bluetooth Low Energy）使得蓝牙4.0的应用越来越广泛。其中，在iOS中是要用到系统的&lt;CoreBluetooth/CoreBluetooth.h&gt;框架。</p>
+<p>蓝牙开发分为中心者模式和管理者模式（也有人说是中心模式和外设模式）：1.常用的就是使用中心者模式作为开发，我们手机作为主机，连接蓝牙外设；2.管理者模式，这个基本用到的比较少，我们手机自己作为外设，自己创建服务和特征，然后有其他的设备连接我们的手机。</p>
+<!-- more -->
+<p>基本概念：一个中心设备可以连接多个外部设备，一个外部设备包含一个或多个服务（services），一个服务包含一个或多个特征（characteristic）。其中1.服务可以理解为一个模块的窗口，它是蓝牙外设对外广播一定要有的。2.特征位于服务下面，是具体实现功能的窗口，一般特征都会有value，也就是特征值，特征是与外界交互的最小单位。3.UUID：相当与使用这个模块对映的应用的标识。4.RSSI：信号强度，利用此信息可进行蓝牙测距</p>
+<p>流程主要分为以下几步：1、建立中心设备 2、扫描外部设备 3、连接外部设备 4、扫描外备中的服务和特征 5、利用相关的特征与外部设备收发数据。</p>
+<p>CoreBluetooth中涉及以下对象类：</p>
+<p>CBCentralManager：中心设备类</p>
+<p>CBPeripheral：外围设备类</p>
+<p>CBCharacteristic：设备特征类</p>
+<p>下篇文章会结合实例代码讲解蓝牙开发流程。</p>
 
             </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://corporale.github.io//post/hello-gridea">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
             
 
             
