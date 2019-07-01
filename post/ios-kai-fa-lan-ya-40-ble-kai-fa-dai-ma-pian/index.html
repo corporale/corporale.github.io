@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://corporale.github.io//favicon.ico?v=1561971760445">
+<link rel="shortcut icon" href="https://corporale.github.io//favicon.ico?v=1561972075700">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://corporale.github.io//styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://corporale.github.io/">
-        <img src="https://corporale.github.io//images/avatar.png?v=1561971760445" class="site-logo">
+        <img src="https://corporale.github.io//images/avatar.png?v=1561972075700" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -98,11 +98,11 @@
             <div class="post-content">
               <p>上一篇文章我们讲了iOS开发的理论知识，下面我们就从代码开始讲解。</p>
 <p><strong>1.CoreBluetooth.framework导入</strong></p>
-<p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。
-<img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
+<p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。</p>
+<!-- more -->
+<p><img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
 2.在代码中导入CoreBluetooth.framework                                                                            Swift：import CoreBluetooth                                                                                        Objective-C：#import</p>
 <p>3.声明协议：使用CoreBluetooth需要支持CBCentralManagerDelegate（需要蓝牙管理者mgr 管理者可以扫描外围设备）, CBPeripheralDelegate协议（mgr扫描到外设，与外设进行连接断开连接信息交流等一系列反馈回调），即前面所说的中心设备和外围设备，并实现相应方法</p>
-<!-- more -->
 <p><strong>2.建立一个Central Manager实例进行蓝牙管理</strong></p>
 <pre><code>self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 

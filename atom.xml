@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-07-01T09:02:58.537Z</updated>
+    <updated>2019-07-01T09:07:58.177Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -159,7 +159,7 @@ xcrun: error: unable to find utility &quot;xcodebuild&quot;, not a developer too
 <pre><code>sudo xcode-select -s /Applications/Xcode.app/Contents/Developer/
 </code></pre>
 <p>再次执行./carthageBootstrap.sh， 成功
-<img src="https://upload-images.jianshu.io/upload_images/817824-89c6e3c98ecaa3d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<img src="https://corporale.github.io//post-images/1561972051737.png" alt=""></p>
 <h1 id="4运行isimulator">4.运行iSimulator</h1>
 <p>折腾半天终于将工程跑成功，但运行完之后控制台提示这个错误, 然后模拟器没有显示出来
 Unable to load Info.plist exceptions (eGPUOverrides)</p>
@@ -217,7 +217,7 @@ Failed during: git fetch origin master:refs/remotes/origin/master --tags --force
 </ul>
 <p>再次执行安装命令，终端提示 no alternative certificate subject name matches target host name 'github.com', 好吧，应该是host配置不对，后面按照网上大神的<a href="https://www.jianshu.com/p/c8d998903a6a">教程</a>那个xx替换成<strong>192.30.253.113</strong>就没问题</p>
 <p>一开始还担心这个ip地址指向的地方是不安全，用<a href="https://www.ip.cn/index.php?ip">ip域名查询</a>下发现指向github,再次执行安装命令，终于成功了
-<img src="https://upload-images.jianshu.io/upload_images/817824-a9cc0ab525948c76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<img src="https://corporale.github.io//post-images/1561971977512.png" alt=""></p>
 <p>下篇文章会说怎么用homebrew安装Carthage</p>
 <p>参考链接
 <a href="https://www.jianshu.com/p/c8d998903a6a">Mac Homebrew 安装遇到的坑</a></p>
@@ -231,18 +231,15 @@ Failed during: git fetch origin master:refs/remotes/origin/master --tags --force
         <updated>2019-02-17T15:34:06.000Z</updated>
         <summary type="html"><![CDATA[<p>上一篇文章我们讲了iOS开发的理论知识，下面我们就从代码开始讲解。</p>
 <p><strong>1.CoreBluetooth.framework导入</strong></p>
-<p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。
-<img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
-2.在代码中导入CoreBluetooth.framework                                                                            Swift：import CoreBluetooth                                                                                        Objective-C：#import</p>
-<p>3.声明协议：使用CoreBluetooth需要支持CBCentralManagerDelegate（需要蓝牙管理者mgr 管理者可以扫描外围设备）, CBPeripheralDelegate协议（mgr扫描到外设，与外设进行连接断开连接信息交流等一系列反馈回调），即前面所说的中心设备和外围设备，并实现相应方法</p>
+<p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>上一篇文章我们讲了iOS开发的理论知识，下面我们就从代码开始讲解。</p>
 <p><strong>1.CoreBluetooth.framework导入</strong></p>
-<p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。
-<img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
+<p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。</p>
+<!-- more -->
+<p><img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
 2.在代码中导入CoreBluetooth.framework                                                                            Swift：import CoreBluetooth                                                                                        Objective-C：#import</p>
 <p>3.声明协议：使用CoreBluetooth需要支持CBCentralManagerDelegate（需要蓝牙管理者mgr 管理者可以扫描外围设备）, CBPeripheralDelegate协议（mgr扫描到外设，与外设进行连接断开连接信息交流等一系列反馈回调），即前面所说的中心设备和外围设备，并实现相应方法</p>
-<!-- more -->
 <p><strong>2.建立一个Central Manager实例进行蓝牙管理</strong></p>
 <pre><code>self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 
