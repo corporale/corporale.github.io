@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-07-01T08:49:40.421Z</updated>
+    <updated>2019-07-01T09:02:58.537Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -228,18 +228,18 @@ Failed during: git fetch origin master:refs/remotes/origin/master --tags --force
         <id>https://corporale.github.io//post/ios-kai-fa-lan-ya-40-ble-kai-fa-dai-ma-pian</id>
         <link href="https://corporale.github.io//post/ios-kai-fa-lan-ya-40-ble-kai-fa-dai-ma-pian">
         </link>
-        <updated>2019-07-01T08:34:06.000Z</updated>
+        <updated>2019-02-17T15:34:06.000Z</updated>
         <summary type="html"><![CDATA[<p>上一篇文章我们讲了iOS开发的理论知识，下面我们就从代码开始讲解。</p>
 <p><strong>1.CoreBluetooth.framework导入</strong></p>
 <p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。
-<img src="https://upload-images.jianshu.io/upload_images/817824-4dcd5541a8909182.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">
+<img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
 2.在代码中导入CoreBluetooth.framework                                                                            Swift：import CoreBluetooth                                                                                        Objective-C：#import</p>
 <p>3.声明协议：使用CoreBluetooth需要支持CBCentralManagerDelegate（需要蓝牙管理者mgr 管理者可以扫描外围设备）, CBPeripheralDelegate协议（mgr扫描到外设，与外设进行连接断开连接信息交流等一系列反馈回调），即前面所说的中心设备和外围设备，并实现相应方法</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>上一篇文章我们讲了iOS开发的理论知识，下面我们就从代码开始讲解。</p>
 <p><strong>1.CoreBluetooth.framework导入</strong></p>
 <p>1.在General-&gt;TARGETS-&gt;Linked Framworks and Libraries中点击添加并选择CoreBluetooth.framework导入。
-<img src="https://upload-images.jianshu.io/upload_images/817824-4dcd5541a8909182.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image">
+<img src="https://corporale.github.io//post-images/1561971725495.png" alt="">
 2.在代码中导入CoreBluetooth.framework                                                                            Swift：import CoreBluetooth                                                                                        Objective-C：#import</p>
 <p>3.声明协议：使用CoreBluetooth需要支持CBCentralManagerDelegate（需要蓝牙管理者mgr 管理者可以扫描外围设备）, CBPeripheralDelegate协议（mgr扫描到外设，与外设进行连接断开连接信息交流等一系列反馈回调），即前面所说的中心设备和外围设备，并实现相应方法</p>
 <!-- more -->
@@ -433,7 +433,7 @@ CBPeripheralDelegate的peripheral:(CBPeripheral *) didWriteValueForCharacteristi
         <id>https://corporale.github.io//post/ios-kai-fa-lan-ya-40-ble-kai-fa-li-lun-pian</id>
         <link href="https://corporale.github.io//post/ios-kai-fa-lan-ya-40-ble-kai-fa-li-lun-pian">
         </link>
-        <updated>2019-07-01T08:29:59.000Z</updated>
+        <updated>2019-02-17T08:29:59.000Z</updated>
         <summary type="html"><![CDATA[<p>之前公司的项目有用到蓝牙4.0, 趁周末有时间总结下其中的知识点。蓝牙低功耗技术（BLE，Bluetooth Low Energy）使得蓝牙4.0的应用越来越广泛。其中，在iOS中是要用到系统的&lt;CoreBluetooth/CoreBluetooth.h&gt;框架。</p>
 <p>蓝牙开发分为中心者模式和管理者模式（也有人说是中心模式和外设模式）：1.常用的就是使用中心者模式作为开发，我们手机作为主机，连接蓝牙外设；2.管理者模式，这个基本用到的比较少，我们手机自己作为外设，自己创建服务和特征，然后有其他的设备连接我们的手机。</p>
 ]]></summary>
