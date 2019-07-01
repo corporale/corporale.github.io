@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-07-01T08:39:30.906Z</updated>
+    <updated>2019-07-01T08:41:52.491Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -10,6 +10,91 @@
     <logo>https://corporale.github.io//images/avatar.png</logo>
     <icon>https://corporale.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[iOS-集成Firebase发送推送消息到App]]></title>
+        <id>https://corporale.github.io//post/ios-ji-cheng-firebase-fa-song-tui-song-xiao-xi-dao-app</id>
+        <link href="https://corporale.github.io//post/ios-ji-cheng-firebase-fa-song-tui-song-xiao-xi-dao-app">
+        </link>
+        <updated>2019-07-01T08:41:35.000Z</updated>
+        <content type="html"><![CDATA[<p>继续集成Firebase</p>
+<p>按照教程文档来<a href="https://firebase.google.com/docs/cloud-messaging/ios/client?authuser=0#upload_your_apns_authentication_key">云消息传递文档</a></p>
+<p>讲下比较重要的几个步骤</p>
+<h1 id="上传您的-apns-身份验证密钥">上传您的 APNs 身份验证密钥</h1>
+<p>将您的 APNs 身份验证密钥上传到 Firebase。如果您还没有 APNs 身份验证密钥，请参阅<a href="https://firebase.google.com/docs/cloud-messaging/ios/certs?authuser=0">配置 FCM APNs</a>。</p>
+<ol>
+<li>
+<p>在 Firebase 控制台中，在您的项目内依次选择齿轮图标、<strong>项目设置</strong>以及<strong>云消息传递</strong>标签。
+<img src="https://upload-images.jianshu.io/upload_images/817824-318a297d2843ce34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li>
+<p>在 <strong>iOS 应用配置</strong>下的 <strong>APNs 身份验证密钥</strong>中，点击<strong>上传</strong>按钮。</p>
+</li>
+<li>
+<p>转到您保存密钥的位置，选择该密钥，然后点击<strong>打开</strong>。添加该密钥的密钥 ID（可在 <a href="https://developer.apple.com/membercenter/index.action">Apple Developer Member Center</a> 的 <strong>Certificates, Identifiers &amp; Profiles</strong> 中找到），然后点击<strong>上传</strong>。</p>
+</li>
+</ol>
+<h1 id="在firebase配置苹果开发者后台的文件">在firebase配置苹果开发者后台的文件</h1>
+<p><img src="https://upload-images.jianshu.io/upload_images/817824-366e5dec2b756a2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">
+用它推荐的方式, 配置p12文件, 这个跟极光推送配置差不多
+<img src="https://upload-images.jianshu.io/upload_images/817824-51be909f4c3fed4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="发送通知消息">发送通知消息</h1>
+<p><img src="https://upload-images.jianshu.io/upload_images/817824-47ed1c89432ff662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击左边的Clound Messaging"></p>
+<ol>
+<li>
+<p>在目标设备上安装并运行该应用。您需要接受权限请求，才能收到远程通知。</p>
+</li>
+<li>
+<p>确保应用在设备的后台中运行。</p>
+</li>
+<li>
+<p>打开<a href="https://console.firebase.google.com/project/_/notification?authuser=0">通知编辑器</a>，并选择<strong>新建消息</strong>。</p>
+</li>
+<li>
+<p>输入消息内容。</p>
+</li>
+<li>
+<p>选择<strong>在设备上测试</strong>。</p>
+</li>
+<li>
+<p>在标签为<strong>添加 FCM 注册令牌</strong>的字段中，输入您在本指南上一部分获得的注册令牌。
+<img src="https://upload-images.jianshu.io/upload_images/817824-0e3a02ac0ff0a42e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+</ol>
+<p>运行项目在下面这个方法可以获取到</p>
+<pre><code>func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        XGPrint(&quot;Firebase registration token: \(fcmToken)&quot;)
+        // TODO：将令牌发送到自家服务器,统一推送
+        // 注意：每次应用启动时以及每当生成新令牌时都会触发此回调。
+    }
+</code></pre>
+<ol start="7">
+<li>点击<strong>测试</strong></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[iOS-使用Firebase收集应用崩溃日志]]></title>
+        <id>https://corporale.github.io//post/ios-shi-yong-firebase-shou-ji-ying-yong-beng-kui-ri-zhi</id>
+        <link href="https://corporale.github.io//post/ios-shi-yong-firebase-shou-ji-ying-yong-beng-kui-ri-zhi">
+        </link>
+        <updated>2019-07-01T08:40:58.000Z</updated>
+        <content type="html"><![CDATA[<p>公司做的项目主要市场是海外， 所以同事提到集成Firebase，可以进行收集日志和分析用户情况。毕竟2014年10月就被Google收购了，结合Google的云服务可以很方便管理自己的项目。</p>
+<h1 id="firebase-crashlytics-使用入门">Firebase Crashlytics 使用入门</h1>
+<p>按照官网这个<a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0">Firebase Crashlytics 使用入门</a>
+大概就是
+1.首先去<a href="%5Bhttps://console.firebase.google.com/%5D(https://console.firebase.google.com/)">Firebase 控制台</a>创建应用
+2.然后进去对应项目后点击左边栏的Crashlytics
+<img src="https://upload-images.jianshu.io/upload_images/817824-a9cc83cdabd0d429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">
+3.按照上面官网提供的链接在CocoaPods添加对应的库，这里就不多说了，教程说得很详细了。之后还有个视频教程，看下来说得挺详细得。
+<img src="https://upload-images.jianshu.io/upload_images/817824-2aac7b8963158077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="firebase要想查看崩溃报告还要结合fabric才可以分析">Firebase要想查看崩溃报告还要结合fabric才可以分析</h1>
+<p>wtf，还要fabric账号，叫公司的安卓同事又要了个公司的fabric账号
+在<a href="https://fabric.io/firebase_migration/apps">fabric首页</a>死活找不到创建app地方。目标就是生成一个app在左边红色框的地方将他拖到右边的地方就进行firebase和fabric的绑定，都已经按照视频的教程做了，晕
+<img src="https://upload-images.jianshu.io/upload_images/817824-6fe1e4b977142f91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>现在问题是怎么才会出现呢，无意中点到<a href="https://fabric.io/settings/organizations">organizations</a>。跳到这个网址<a href="https://fabric.io/kits">这个网址</a>点击第一个地方。
+这个才是接下来正常的<a href="https://fabric.io/kits/ios/crashlytics/summary">教程</a>，firebase讲一半不讲一半，也没有引导用户跳到这个网址再进行浏览。按照步骤下来，终于可以愉快玩耍了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[运行iSimulator工程]]></title>
         <id>https://corporale.github.io//post/yun-xing-isimulator-gong-cheng</id>

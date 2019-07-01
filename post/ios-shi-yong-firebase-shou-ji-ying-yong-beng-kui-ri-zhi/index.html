@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello Gridea | Gridea</title>
+<title>iOS-使用Firebase收集应用崩溃日志 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -92,45 +92,37 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Hello Gridea</h2>
-            <div class="post-date">2018-12-12</div>
-            
-              <div class="feature-container" style="background-image: url('https://corporale.github.io//post-images/hello-gridea.png')">
-              </div>
+            <h2 class="post-title">iOS-使用Firebase收集应用崩溃日志</h2>
+            <div class="post-date">2019-07-01</div>
             
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <p>公司做的项目主要市场是海外， 所以同事提到集成Firebase，可以进行收集日志和分析用户情况。毕竟2014年10月就被Google收购了，结合Google的云服务可以很方便管理自己的项目。</p>
+<h1 id="firebase-crashlytics-使用入门">Firebase Crashlytics 使用入门</h1>
+<p>按照官网这个<a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0">Firebase Crashlytics 使用入门</a>
+大概就是
+1.首先去<a href="%5Bhttps://console.firebase.google.com/%5D(https://console.firebase.google.com/)">Firebase 控制台</a>创建应用
+2.然后进去对应项目后点击左边栏的Crashlytics
+<img src="https://upload-images.jianshu.io/upload_images/817824-a9cc83cdabd0d429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">
+3.按照上面官网提供的链接在CocoaPods添加对应的库，这里就不多说了，教程说得很详细了。之后还有个视频教程，看下来说得挺详细得。
+<img src="https://upload-images.jianshu.io/upload_images/817824-2aac7b8963158077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h1 id="firebase要想查看崩溃报告还要结合fabric才可以分析">Firebase要想查看崩溃报告还要结合fabric才可以分析</h1>
+<p>wtf，还要fabric账号，叫公司的安卓同事又要了个公司的fabric账号
+在<a href="https://fabric.io/firebase_migration/apps">fabric首页</a>死活找不到创建app地方。目标就是生成一个app在左边红色框的地方将他拖到右边的地方就进行firebase和fabric的绑定，都已经按照视频的教程做了，晕
+<img src="https://upload-images.jianshu.io/upload_images/817824-6fe1e4b977142f91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>现在问题是怎么才会出现呢，无意中点到<a href="https://fabric.io/settings/organizations">organizations</a>。跳到这个网址<a href="https://fabric.io/kits">这个网址</a>点击第一个地方。
+这个才是接下来正常的<a href="https://fabric.io/kits/ios/crashlytics/summary">教程</a>，firebase讲一半不讲一半，也没有引导用户跳到这个网址再进行浏览。按照步骤下来，终于可以愉快玩耍了。</p>
 
             </div>
             
-              <div class="tag-container">
-                
-                  <a href="https://corporale.github.io//tag/gridea" class="tag">
-                    Gridea
-                  </a>
-                
-              </div>
             
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://corporale.github.io//post/yun-xing-isimulator-gong-cheng">
+                  <h3 class="post-title">
+                    运行iSimulator工程
+                  </h3>
+                </a>
+              </div>
             
 
             
