@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-07-01T09:09:47.233Z</updated>
+    <updated>2019-07-01T09:14:26.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -21,28 +21,17 @@
 <p>讲下比较重要的几个步骤</p>
 <h1 id="上传您的-apns-身份验证密钥">上传您的 APNs 身份验证密钥</h1>
 <p>将您的 APNs 身份验证密钥上传到 Firebase。如果您还没有 APNs 身份验证密钥，请参阅<a href="https://firebase.google.com/docs/cloud-messaging/ios/certs?authuser=0">配置 FCM APNs</a>。</p>
-<ol>
-<li>
-<p>在 Firebase 控制台中，在您的项目内依次选择齿轮图标、<strong>项目设置</strong>以及<strong>云消息传递</strong>标签。
-<img src="https://upload-images.jianshu.io/upload_images/817824-318a297d2843ce34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-</li>
-<li>
-<p>在 <strong>iOS 应用配置</strong>下的 <strong>APNs 身份验证密钥</strong>中，点击<strong>上传</strong>按钮。</p>
-</li>
-<li>
-<p>转到您保存密钥的位置，选择该密钥，然后点击<strong>打开</strong>。添加该密钥的密钥 ID（可在 <a href="https://developer.apple.com/membercenter/index.action">Apple Developer Member Center</a> 的 <strong>Certificates, Identifiers &amp; Profiles</strong> 中找到），然后点击<strong>上传</strong>。</p>
-</li>
-</ol>
 ]]></summary>
         <content type="html"><![CDATA[<p>继续集成Firebase</p>
 <p>按照教程文档来<a href="https://firebase.google.com/docs/cloud-messaging/ios/client?authuser=0#upload_your_apns_authentication_key">云消息传递文档</a></p>
 <p>讲下比较重要的几个步骤</p>
 <h1 id="上传您的-apns-身份验证密钥">上传您的 APNs 身份验证密钥</h1>
 <p>将您的 APNs 身份验证密钥上传到 Firebase。如果您还没有 APNs 身份验证密钥，请参阅<a href="https://firebase.google.com/docs/cloud-messaging/ios/certs?authuser=0">配置 FCM APNs</a>。</p>
+<!-- more -->
 <ol>
 <li>
 <p>在 Firebase 控制台中，在您的项目内依次选择齿轮图标、<strong>项目设置</strong>以及<strong>云消息传递</strong>标签。
-<img src="https://upload-images.jianshu.io/upload_images/817824-318a297d2843ce34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<img src="https://corporale.github.io//post-images/1561972359024.png" alt=""></p>
 </li>
 <li>
 <p>在 <strong>iOS 应用配置</strong>下的 <strong>APNs 身份验证密钥</strong>中，点击<strong>上传</strong>按钮。</p>
@@ -51,13 +40,12 @@
 <p>转到您保存密钥的位置，选择该密钥，然后点击<strong>打开</strong>。添加该密钥的密钥 ID（可在 <a href="https://developer.apple.com/membercenter/index.action">Apple Developer Member Center</a> 的 <strong>Certificates, Identifiers &amp; Profiles</strong> 中找到），然后点击<strong>上传</strong>。</p>
 </li>
 </ol>
-<!-- more -->
 <h1 id="在firebase配置苹果开发者后台的文件">在firebase配置苹果开发者后台的文件</h1>
-<p><img src="https://upload-images.jianshu.io/upload_images/817824-366e5dec2b756a2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">
+<p><img src="https://corporale.github.io//post-images/1561972380736.png" alt="">
 用它推荐的方式, 配置p12文件, 这个跟极光推送配置差不多
-<img src="https://upload-images.jianshu.io/upload_images/817824-51be909f4c3fed4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<img src="https://corporale.github.io//post-images/1561972396170.png" alt=""></p>
 <h1 id="发送通知消息">发送通知消息</h1>
-<p><img src="https://upload-images.jianshu.io/upload_images/817824-47ed1c89432ff662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击左边的Clound Messaging"></p>
+<p><img src="https://corporale.github.io//post-images/1561972413903.png" alt="点击左边的Clound Messaging"></p>
 <ol>
 <li>
 <p>在目标设备上安装并运行该应用。您需要接受权限请求，才能收到远程通知。</p>
@@ -76,7 +64,7 @@
 </li>
 <li>
 <p>在标签为<strong>添加 FCM 注册令牌</strong>的字段中，输入您在本指南上一部分获得的注册令牌。
-<img src="https://upload-images.jianshu.io/upload_images/817824-0e3a02ac0ff0a42e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<img src="https://corporale.github.io//post-images/1561972441075.png" alt=""></p>
 </li>
 </ol>
 <p>运行项目在下面这个方法可以获取到</p>
