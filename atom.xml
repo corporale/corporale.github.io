@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://corporale.github.io/</id>
     <title>Yolo</title>
-    <updated>2019-07-02T03:44:45.348Z</updated>
+    <updated>2019-07-02T04:01:00.130Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://corporale.github.io/"/>
     <link rel="self" href="https://corporale.github.io//atom.xml"/>
@@ -15,7 +15,7 @@
         <id>https://corporale.github.io//post/ios-ji-cheng-firebase-fa-song-tui-song-xiao-xi-dao-app</id>
         <link href="https://corporale.github.io//post/ios-ji-cheng-firebase-fa-song-tui-song-xiao-xi-dao-app">
         </link>
-        <updated>2019-07-01T08:41:35.000Z</updated>
+        <updated>2019-07-02T02:41:35.000Z</updated>
         <summary type="html"><![CDATA[<p>继续集成Firebase</p>
 <p>按照教程文档来<a href="https://firebase.google.com/docs/cloud-messaging/ios/client?authuser=0#upload_your_apns_authentication_key">云消息传递文档</a></p>
 <p>讲下比较重要的几个步骤</p>
